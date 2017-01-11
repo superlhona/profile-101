@@ -45,4 +45,14 @@
           backgroundSize: "cover"
         });
     });
+
+    // max length photo
+    var n = $(".flickrimage").length;
+      if (n > 6 ) {
+        $(".next").show();
+      } else {
+        $(".next").hide();
+      }
+  });
+
 });
