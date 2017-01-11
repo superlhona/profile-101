@@ -33,5 +33,16 @@
       // gallery
       $( "<img>" ).attr( "src", item.media.m.replace('_m', '_n') ).addClass("flickrimage").appendTo("#images");
 
+      // background page 1
+      var randomPhoto = data.items[Math.floor(Math.random() * data.items.length)];  
+
+        $("#page1").css({
+          position: "relative",
+          height: "100vh",
+          backgroundImage: "url("+randomPhoto.media.m.replace('_m', '_b')+")",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover"
+        });
     });
 });
