@@ -18,4 +18,20 @@
     }
   });
 
+  // flicker images
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+
+  $.getJSON( flickerAPI, {
+    tags: "illonafedora",
+    tagmode: "any",
+    format: "json"
+  })
+
+  .done(function( data ) {
+    $.each( data.items, function( i, item ) {
+
+      // gallery
+      $( "<img>" ).attr( "src", item.media.m.replace('_m', '_n') ).addClass("flickrimage").appendTo("#images");
+
+    });
 });
